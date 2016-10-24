@@ -1,0 +1,5 @@
+/* Set the chrome extension window size */
+body {
+  min-height: 600px;
+  min-width: 800px;
+}

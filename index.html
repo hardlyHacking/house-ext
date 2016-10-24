@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/size.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <!-- Materialize -->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- Local extension JS -->
+    <script type="text/javascript" src="js/url_utils.js"></script>
+    <script type="text/javascript" src="js/zillow_utils.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <!-- Input selection dropdown -->
+    <ul id="input-dropdown" class="dropdown-content">
+      <li><a href="#!">Manual</a></li>
+      <li><a href="#!">Auto</a></li>
+    </ul>
+    <!-- Navbar -->
+    <nav>
+      <div class="nav-wrapper grey">
+        <a href="#!" class="left brand-logo">PercentRules</a>
+        <ul class="right">
+          <li><a href="#!" id="code-link"><i class="material-icons">code</i></a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="input-dropdown" data-beloworigin="true"><i class="material-icons">mode_edit</i><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="stats">
+        <h3>Stats</h3>
+        <ul id="main-list">
+          <li>
+            <div class="1percent">
+              <h5>1% Rule</h5>
+              Learn more <a href="#!" id="1percent-link">here</a>.
+              <form action="#">
+                <p class="range-field">
+                  <input id="1percent-range" type="range" min="0.0" max="2.0" step="0.01" />
+                </p>
+              </form>
+            </div>
+          </li>
+          <li>
+            <div class="caprate">
+              <h5>Cap Rate</h5>
+              Learn more <a href="#!" id="caprate-link">here</a>.
+              <form action="#">
+                <p class="range-field">
+                  <input id="caprate-range" type="range" min="0.0" max="20.0" step="0.01" />
+                </p>
+              </form>
+            </div>
+          </li>
+          <li>
+            <div class="cashoncash">
+              <h5>Cash on Cash</h5>
+              Learn more <a href="#!" id="cashoncash-link">here</a>.
+              <form action="#">
+                <p class="range-field">
+                  <input id="caprate-range" type="range" min="0.0" max="50.0" step="0.1" />
+                </p>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="verdict">
+        <h3>Verdict</h3>
+      </div>
+    </div>
+  </body>
+</html>
