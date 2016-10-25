@@ -2,9 +2,14 @@
  * Generic utility functions for screen scraping Zillow
  */
 
+function isZillow(url) {
+  const zillowRegex = /(?:https?:\/\/)?(?:www)?zillow.com\/?(?:.*)?/;
+  return zillowRegex.test(url);
+}
+
 function findDivByTitle(title) {
   return $(`div:contains(${title})`)
-    .filter(() => { return $(this).text === title });
+    .filter(() => { return $(this).text.trim() === title });
 }
 
 function findValueTextByTitle(title) {
@@ -25,8 +30,8 @@ function extractNumber(regex, text) {
 
 function getForecastedSalePrice() {
   const title = 'Zestimate';
-  const regex = /\$([0-9,]+)\/mo/;
-  const text = findValueTextByTitle(rentTitle);
+  const regex = /\$([0-9,]+)/;
+  const text = findValueTextByTitle(title);
   return extractNumber(regex, text);
 }
 

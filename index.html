@@ -29,7 +29,8 @@
     <nav>
       <div class="nav-wrapper grey">
         <a href="#!" class="left brand-logo">PercentRules</a>
-        <ul class="right">
+          <ul class="right">
+          <li><a href="#!" id="identity-link"><i class="material-icons">perm_identity</i></a></li>
           <li><a href="#!" id="code-link"><i class="material-icons">code</i></a></li>
           <li><a class="dropdown-button" href="#!" data-activates="input-dropdown" data-beloworigin="true"><i class="material-icons">mode_edit</i><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
         </ul>
@@ -38,7 +39,6 @@
 
     <div class="container">
       <div class="stats">
-        <h3>Stats</h3>
         <ul id="main-list">
           <li>
             <div class="1percent">
@@ -46,9 +46,10 @@
               Learn more <a href="#!" id="1percent-link">here</a>.
               <form action="#">
                 <p class="range-field">
-                  <input id="1percent-range" type="range" min="0.0" max="2.0" step="0.01" />
+                  <input id="1percent-range" readonly type="range" min="0.0" max="2.0" step="0.01" />
                 </p>
               </form>
+              <p class="explanation" id="1percent-explanation"></p>
             </div>
           </li>
           <li>
@@ -57,9 +58,10 @@
               Learn more <a href="#!" id="caprate-link">here</a>.
               <form action="#">
                 <p class="range-field">
-                  <input id="caprate-range" type="range" min="0.0" max="20.0" step="0.01" />
+                  <input id="caprate-range" readonly type="range" min="0.0" max="20.0" step="0.01" />
                 </p>
               </form>
+              <p class="explanation" id="caprate-explanation"></p>
             </div>
           </li>
           <li>
@@ -68,15 +70,30 @@
               Learn more <a href="#!" id="cashoncash-link">here</a>.
               <form action="#">
                 <p class="range-field">
-                  <input id="caprate-range" type="range" min="0.0" max="50.0" step="0.1" />
+                  <input id="caprate-range" readonly type="range" min="0.0" max="50.0" step="0.1" />
                 </p>
               </form>
+              <p class="explanation" id="cashoncash-explanation"></p>
             </div>
           </li>
         </ul>
       </div>
       <div class="verdict">
-        <h3>Verdict</h3>
+        <h3>Verdict: <i class="material-icons">thumb_down</i></h3>
+        <form action="#">
+          <p>
+            <input type="checkbox" disabled="disabled" />
+            <label>1% Rule</label>
+          </p>
+          <p>
+            <input type="checkbox" disabled="disabled" />
+            <label>Cap Rate</label>
+          </p>
+          <p>
+            <input type="checkbox" disabled="disabled" />
+            <label>Cash on Cash</label>
+          </p>
+        </form>
       </div>
     </div>
   </body>

@@ -4,8 +4,7 @@ $(document).ready(() => {
 
   // Show main body list with empty input
   Materialize.showStaggeredList('#main-list');
-  // Hide main verdic div until non-empty input
-  $('div.verdict').hide();
+  $('p.explanation').hide();
 
   // URL handling to open in new tabs
   $('#code-link').on('click', () => {
@@ -33,7 +32,16 @@ $(document).ready(() => {
   });
 
   // Main logic for Zillow
-  if (isZillow()) {
-    alert('on zillow');
-  }
+  const url = chrome.tabs.query({active: true}, (tabs) => {
+    const url = tabs[0].url;
+    if (isZillow(url)) {
+      const forecastedSalePrice = getForecastedSalePrice();
+      const rentEstimate = getRentEstimate();
+      if (forecastedSalePrice > 0 && rentEstimate > 0) {
+        console.log(`Nice, ${forecastedSalePrice} ${rentEstimate}`);
+      } else {
+        console.log(`Boo, ${forecastedSalePrice} ${rentEstimate}`);
+      }
+    }
+  });
 });
