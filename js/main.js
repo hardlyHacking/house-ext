@@ -34,14 +34,9 @@ $(document).ready(() => {
   // Main logic for Zillow
   const url = chrome.tabs.query({active: true}, (tabs) => {
     const url = tabs[0].url;
+    console.log(url);
     if (isZillow(url)) {
-      const forecastedSalePrice = getForecastedSalePrice();
-      const rentEstimate = getRentEstimate();
-      if (forecastedSalePrice > 0 && rentEstimate > 0) {
-        console.log(`Nice, ${forecastedSalePrice} ${rentEstimate}`);
-      } else {
-        console.log(`Boo, ${forecastedSalePrice} ${rentEstimate}`);
-      }
+      chrome.tabs.sendMessage(tabs[0].id, {text: 'report_back'}, mainZillow);
     }
   });
 });
